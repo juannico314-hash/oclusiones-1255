@@ -1,0 +1,645 @@
+{
+  "meta": {
+    "source": "Trabajando-Modelo de valor-oclusiones venosas retinianas.xlsm",
+    "description": "Modelo de Valor - Análisis Multicriterio (MCDA) para oclusiones venosas retinianas",
+    "version": "5.0",
+    "discount": 0.0,
+    "indication": "Oclusiones venosas retinianas",
+    "discountedMolecules": [
+      "Ranibizumab 0,5 mg PRN"
+    ]
+  },
+  "molecules": [
+    {
+      "id": "mol_0",
+      "index": 0,
+      "name": "Aflibercept 2 mg  Q8",
+      "columnRange": "D-H",
+      "selected": true
+    },
+    {
+      "id": "mol_1",
+      "index": 1,
+      "name": "Ranibizumab 0,5 mg PRN",
+      "columnRange": "K-O",
+      "selected": true
+    }
+  ],
+  "definitions": [
+    {
+      "domain": "Eficacia",
+      "criteria": "Cambio medio en la agudeza visual corregida (BCVA)",
+      "operationalDefinition": "Magnitud del cambio promedio en letras de BCVA después del tratamiento, comparado con el valor basal . Refleja la ganancia funcional visual promedio atribuible a la intervención.",
+      "possibleValues": "0–5 letras = 1; 6–10 letras = 2; 11–15 letras = 4; >15 letras = 5"
+    },
+    {
+      "domain": "Eficacia",
+      "criteria": "Pacientes con ganancia ≥15 letras en BCVA",
+      "operationalDefinition": "Proporción de pacientes que alcanzan una mejoría clínicamente relevante de al menos 15 letras en BCVA durante el seguimiento del estudio. Este desenlace representa una recuperación visual significativa.",
+      "possibleValues": "0–15% = 1; 16–30% = 3; >30% = 5"
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Desprendimiento de retina",
+      "operationalDefinition": "Frecuencia de pacientes que presentan desprendimiento de retina  reportado como evento adverso serio durante el seguimiento del tratamiento.",
+      "possibleValues": "5 = 0%\n4 = >0% a <0,5%\n3 = ≥0,5% a <1%\n2 = ≥1% a <3%\n1 = ≥3%"
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Evento cerebrovascular",
+      "operationalDefinition": "Frecuencia de pacientes que presentan un evento cerebrovascular reportado como evento adverso serio durante el periodo de seguimiento del tratamiento",
+      "possibleValues": "5 = 0%\n4 = >0% a <0,5%\n3 = ≥0,5% a <1%\n2 = ≥1% a <3%\n1 = ≥3%"
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Infarto agudo de miocardio",
+      "operationalDefinition": "Frecuencia de pacientes que presentan infarto agudo de miocardio reportado como evento adverso serio durante el seguimiento del tratamiento.",
+      "possibleValues": "5 = 0%\n4 = >0% a <0,5%\n3 = ≥0,5% a <1%\n2 = ≥1% a <3%\n1 = ≥3%"
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Vitreitis",
+      "operationalDefinition": "Frecuencia de pacientes que presentan Vitreitis reportada como evento adverso  durante el seguimiento del tratamiento",
+      "possibleValues": "5 = 0%\n4 = >0% a <0,5%\n3 = ≥0,5% a <1%\n2 = ≥1% a <3%\n1 = ≥3%"
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Supresión sistémica de VEGF",
+      "operationalDefinition": "Duración o persistencia de la reducción de VEGF sistémico posterior a la administración del medicamento. Evalúa el potencial efecto sistémico del tratamiento sobre la vía VEGF.",
+      "possibleValues": "Prolongada = 1; No prolongada = 5"
+    },
+    {
+      "domain": "PROs",
+      "criteria": "Calidad de vida relacionada con la salud",
+      "operationalDefinition": "Cambio reportado en instrumentos de calidad de vida relacionada con la salud, incluyendo dominios visuales, funcionales o generales. Se clasifica según si el tratamiento empeora, no modifica o mejora la calidad de vida.",
+      "possibleValues": "Empeoramiento = 1; Sin efecto = 3; Mejoría = 5"
+    },
+    {
+      "domain": "PROs",
+      "criteria": "Discapacidad / capacidad funcional",
+      "operationalDefinition": "Cambio en la capacidad del paciente para realizar actividades cotidianas o mantener independencia funcional, medido mediante escalas funcionales, dominios visuales o reportes de desempeño.",
+      "possibleValues": "Empeoramiento = 1; Sin efecto = 3; Mejoría = 5"
+    },
+    {
+      "domain": "Organizativo",
+      "criteria": "Estado de aprobación regulatoria",
+      "operationalDefinition": "Condición regulatoria de uso del medicamento para la indicación evaluada. Diferencia si el tratamiento está aprobado específicamente para esa indicación o si su uso corresponde a una indicación no aprobada.",
+      "possibleValues": "Off-label = 1; On-label = 5"
+    },
+    {
+      "domain": "Organizativo",
+      "criteria": "Inclusión en guías de práctica clínica",
+      "operationalDefinition": "Presencia del medicamento o estrategia terapéutica en guías de práctica clínica relevantes para la indicación evaluada. Refleja el respaldo de recomendaciones clínicas formales.",
+      "possibleValues": "No incluido = 1; Incluido = 5"
+    }
+  ],
+  "parameters": [
+    {
+      "domain": "Eficacia clínica",
+      "criteria": "Cambio medio en la agudeza visual corregida (BCVA)",
+      "level": "0–5 letras",
+      "value": 1
+    },
+    {
+      "domain": "Eficacia clínica",
+      "criteria": "Cambio medio en la agudeza visual corregida (BCVA)",
+      "level": "6–10 letras",
+      "value": 2
+    },
+    {
+      "domain": "Eficacia clínica",
+      "criteria": "Cambio medio en la agudeza visual corregida (BCVA)",
+      "level": "11–15 letras",
+      "value": 4
+    },
+    {
+      "domain": "Eficacia clínica",
+      "criteria": "Cambio medio en la agudeza visual corregida (BCVA)",
+      "level": ">15 letras",
+      "value": 5
+    },
+    {
+      "domain": "Eficacia clínica",
+      "criteria": "Pacientes con ganancia ≥15 letras en BCVA",
+      "level": "0–15% pacientes",
+      "value": 1
+    },
+    {
+      "domain": "Eficacia clínica",
+      "criteria": "Pacientes con ganancia ≥15 letras en BCVA",
+      "level": "16–30% pacientes",
+      "value": 3
+    },
+    {
+      "domain": "Eficacia clínica",
+      "criteria": "Pacientes con ganancia ≥15 letras en BCVA",
+      "level": ">30% pacientes",
+      "value": 5
+    },
+    {
+      "domain": "PROs",
+      "criteria": "Calidad de vida relacionada con la salud",
+      "level": "Empeoramiento",
+      "value": 1
+    },
+    {
+      "domain": "PROs",
+      "criteria": "Calidad de vida relacionada con la salud",
+      "level": "Sin efecto",
+      "value": 3
+    },
+    {
+      "domain": "PROs",
+      "criteria": "Calidad de vida relacionada con la salud",
+      "level": "Mejoría",
+      "value": 5
+    },
+    {
+      "domain": "PROs",
+      "criteria": "Discapacidad / capacidad funcional",
+      "level": "Empeoramiento",
+      "value": 1
+    },
+    {
+      "domain": "PROs",
+      "criteria": "Discapacidad / capacidad funcional",
+      "level": "Sin efecto",
+      "value": 3
+    },
+    {
+      "domain": "PROs",
+      "criteria": "Discapacidad / capacidad funcional",
+      "level": "Mejoría",
+      "value": 5
+    },
+    {
+      "domain": "Organizativo",
+      "criteria": "Estado de aprobación regulatoria",
+      "level": "Off-label",
+      "value": 1
+    },
+    {
+      "domain": "Organizativo",
+      "criteria": "Estado de aprobación regulatoria",
+      "level": "On-label",
+      "value": 5
+    },
+    {
+      "domain": "Organizativo",
+      "criteria": "Inclusión en guías de práctica clínica",
+      "level": "No incluido",
+      "value": 1
+    },
+    {
+      "domain": "Organizativo",
+      "criteria": "Inclusión en guías de práctica clínica",
+      "level": "Incluido",
+      "value": 5
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Desprendimiento de retina",
+      "level": "0%",
+      "value": 5
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Desprendimiento de retina",
+      "level": ">0% a <0,5%",
+      "value": 4
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Desprendimiento de retina",
+      "level": "≥0,5% a <1%",
+      "value": 3
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Desprendimiento de retina",
+      "level": "≥1% a <3%",
+      "value": 2
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Desprendimiento de retina",
+      "level": "≥3%",
+      "value": 1
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Evento cerebrovascular",
+      "level": "0%",
+      "value": 5
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Evento cerebrovascular",
+      "level": ">0% a <0,5%",
+      "value": 4
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Evento cerebrovascular",
+      "level": "≥0,5% a <1%",
+      "value": 3
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Evento cerebrovascular",
+      "level": "≥1% a <3%",
+      "value": 2
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Evento cerebrovascular",
+      "level": "≥3%",
+      "value": 1
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Infarto agudo de miocardio",
+      "level": "0%",
+      "value": 5
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Infarto agudo de miocardio",
+      "level": ">0% a <0,5%",
+      "value": 4
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Infarto agudo de miocardio",
+      "level": "≥0,5% a <1%",
+      "value": 3
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Infarto agudo de miocardio",
+      "level": "≥1% a <3%",
+      "value": 2
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Infarto agudo de miocardio",
+      "level": "≥3%",
+      "value": 1
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Vitreitis",
+      "level": "0%",
+      "value": 5
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Vitreitis",
+      "level": ">0% a <0,5%",
+      "value": 4
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Vitreitis",
+      "level": "≥0,5% a <1%",
+      "value": 3
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Vitreitis",
+      "level": "≥1% a <3%",
+      "value": 2
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Vitreitis",
+      "level": "≥3%",
+      "value": 1
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Supresión sistémica de VEGF",
+      "level": "Prolongada",
+      "value": 1
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Supresión sistémica de VEGF",
+      "level": "No prolongada",
+      "value": 5
+    }
+  ],
+  "weights": [
+    {
+      "domain": "Eficacia",
+      "criteria": "Cambio medio en la agudeza visual corregida (BCVA)",
+      "weight": 20.5
+    },
+    {
+      "domain": "Eficacia",
+      "criteria": "Pacientes con ganancia ≥15 letras en BCVA",
+      "weight": 14.5
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Desprendimiento de retina",
+      "weight": 13.2
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Evento cerebrovascular",
+      "weight": 10.7
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Infarto agudo de miocardio",
+      "weight": 10.7
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Vitreitis",
+      "weight": 7.4
+    },
+    {
+      "domain": "Seguridad",
+      "criteria": "Supresión sistémica de VEGF",
+      "weight": 5.0
+    },
+    {
+      "domain": "PROs",
+      "criteria": "Calidad de vida relacionada con la salud",
+      "weight": 6.0
+    },
+    {
+      "domain": "PROs",
+      "criteria": "Discapacidad / capacidad funcional",
+      "weight": 5.0
+    },
+    {
+      "domain": "Organizativo",
+      "criteria": "Estado de aprobación regulatoria",
+      "weight": 4.0
+    },
+    {
+      "domain": "Organizativo",
+      "criteria": "Inclusión en guías de práctica clínica",
+      "weight": 3.0
+    }
+  ],
+  "moleculeInputs": {
+    "Ranibizumab 0,5 mg PRN": [
+      {
+        "outcome": "Cambio medio en la agudeza visual corregida (BCVA)",
+        "result": "15.5",
+        "value": 5,
+        "followup": "24 meses",
+        "reference": "Registro clinical trials-BRIGHTER-NCT01599650",
+        "comments": ""
+      },
+      {
+        "outcome": "Pacientes con ganancia ≥15 letras en BCVA",
+        "result": "52.8",
+        "value": 5,
+        "followup": "24 meses",
+        "reference": "Registro clinical trials-BRIGHTER-NCT01599650",
+        "comments": ""
+      },
+      {
+        "outcome": "Desprendimiento de retina",
+        "result": "0",
+        "value": 5,
+        "followup": "24 meses",
+        "reference": "Registro clinical trials-BRIGHTER-NCT01599650",
+        "comments": ""
+      },
+      {
+        "outcome": "Evento cerebrovascular",
+        "result": "0",
+        "value": 5,
+        "followup": "24 meses",
+        "reference": "Registro clinical trials-BRIGHTER-NCT01599650",
+        "comments": ""
+      },
+      {
+        "outcome": "Infarto agudo de miocardio",
+        "result": "0.0056",
+        "value": 3,
+        "followup": "24 meses",
+        "reference": "Registro clinical trials-BRIGHTER-NCT01599650",
+        "comments": "Evento adverso serio, baja frecuencia 1/180 (0.56%)"
+      },
+      {
+        "outcome": "Vitreitis",
+        "result": "0",
+        "value": 5,
+        "followup": "24 meses",
+        "reference": "Registro clinical trials-BRIGHTER-NCT01599650",
+        "comments": ""
+      },
+      {
+        "outcome": "Supresión sistémica de VEGF",
+        "result": "No prolongada",
+        "value": 5,
+        "followup": "",
+        "reference": "* Venkatesh, Ramesh et al. “Anti-VEGF safety in evolution: A comprehensive review of ocular and systemic considerations.” Indian journal of ophthalmology vol. 74,5 (2026): 748-759. doi:10.4103/IJO.IJO_3284_25\n\n*Sharma, Sourabh et al. “Evidence-Based Guidelines for Intravitreal Anti-VEGF Therapy for Diabetic Retinopathy in Chronic Kidney Disease.” Diabetes therapy : research, treatment and education of diabetes and related disorders vol. 16,11 (2025): 2073-2082. doi:10.1007/s13300-025-01791-y",
+        "comments": ""
+      },
+      {
+        "outcome": "Calidad de vida relacionada con la salud",
+        "result": "Mejoría",
+        "value": 5,
+        "followup": "24 meses",
+        "reference": "Registro clinical trials-BRIGHTER-NCT01599650",
+        "comments": ""
+      },
+      {
+        "outcome": "Discapacidad / capacidad funcional",
+        "result": "NR",
+        "value": 0,
+        "followup": "24 meses",
+        "reference": "",
+        "comments": ""
+      },
+      {
+        "outcome": "Estado de aprobación regulatoria",
+        "result": "On-Label",
+        "value": 5,
+        "followup": "",
+        "reference": "INVIMA 2018M-0007158-R1",
+        "comments": ""
+      },
+      {
+        "outcome": "Inclusión en guías de práctica clínica",
+        "result": "Incluido",
+        "value": 5,
+        "followup": "",
+        "reference": "Kovach, Jaclyn L., et al. \"Retinal vein occlusions preferred practice pattern®.\" Ophthalmology 132.4 (2025): P303-P343.",
+        "comments": ""
+      }
+    ],
+    "Aflibercept 2 mg  Q8": [
+      {
+        "outcome": "Cambio medio en la agudeza visual corregida (BCVA)",
+        "result": "17.1",
+        "value": 5,
+        "followup": "52 semanas",
+        "reference": "Registro clinical trials-VIBRANT-NCT01521559",
+        "comments": ""
+      },
+      {
+        "outcome": "Pacientes con ganancia ≥15 letras en BCVA",
+        "result": "57.1",
+        "value": 5,
+        "followup": "52 semanas",
+        "reference": "Registro clinical trials-VIBRANT-NCT01521559",
+        "comments": ""
+      },
+      {
+        "outcome": "Desprendimiento de retina",
+        "result": "0",
+        "value": 5,
+        "followup": "52 semanas",
+        "reference": "Registro clinical trials-VIBRANT-NCT01521559",
+        "comments": ""
+      },
+      {
+        "outcome": "Evento cerebrovascular",
+        "result": "0",
+        "value": 5,
+        "followup": "52 semanas",
+        "reference": "Registro clinical trials-VIBRANT-NCT01521559",
+        "comments": ""
+      },
+      {
+        "outcome": "Infarto agudo de miocardio",
+        "result": "0",
+        "value": 5,
+        "followup": "52 semanas",
+        "reference": "Registro clinical trials-VIBRANT-NCT01521559",
+        "comments": ""
+      },
+      {
+        "outcome": "Vitreitis",
+        "result": "0",
+        "value": 5,
+        "followup": "52 semanas",
+        "reference": "Registro clinical trials-VIBRANT-NCT01521559",
+        "comments": ""
+      },
+      {
+        "outcome": "Supresión sistémica de VEGF",
+        "result": "Prolongada",
+        "value": 1,
+        "followup": "",
+        "reference": "* Venkatesh, Ramesh et al. “Anti-VEGF safety in evolution: A comprehensive review of ocular and systemic considerations.” Indian journal of ophthalmology vol. 74,5 (2026): 748-759. doi:10.4103/IJO.IJO_3284_25\n\n*Sharma, Sourabh et al. “Evidence-Based Guidelines for Intravitreal Anti-VEGF Therapy for Diabetic Retinopathy in Chronic Kidney Disease.” Diabetes therapy : research, treatment and education of diabetes and related disorders vol. 16,11 (2025): 2073-2082. doi:10.1007/s13300-025-01791-y",
+        "comments": ""
+      },
+      {
+        "outcome": "Calidad de vida relacionada con la salud",
+        "result": "Mejoría",
+        "value": 5,
+        "followup": "52 semanas",
+        "reference": "Registro clinical trials-VIBRANT-NCT01521559",
+        "comments": ""
+      },
+      {
+        "outcome": "Discapacidad / capacidad funcional",
+        "result": "NR",
+        "value": 0,
+        "followup": "",
+        "reference": "",
+        "comments": ""
+      },
+      {
+        "outcome": "Estado de aprobación regulatoria",
+        "result": "On-Label",
+        "value": 5,
+        "followup": "",
+        "reference": "INVIMA 2025MBT-0000160",
+        "comments": ""
+      },
+      {
+        "outcome": "Inclusión en guías de práctica clínica",
+        "result": "Incluido",
+        "value": 5,
+        "followup": "",
+        "reference": "Kovach, Jaclyn L., et al. \"Retinal vein occlusions preferred practice pattern®.\" Ophthalmology 132.4 (2025): P303-P343.",
+        "comments": ""
+      }
+    ]
+  },
+  "costInputs": {
+    "Ranibizumab 0,5 mg PRN": {
+      "technology": "Ranibizumab 0,5 mg PRN",
+      "injectionCount": 5,
+      "pricePerVial": 1653503.0,
+      "costPerInjection": 8267515.0,
+      "administrationCostPerVisit": 1957979.0,
+      "annualAdministrationCost": 9789895.0,
+      "annualTotalCost": 18057410.0,
+      "annualFinalCost": 18057410.0
+    },
+    "Aflibercept 2 mg  Q8": {
+      "technology": "Aflibercept 2 mg  Q8",
+      "injectionCount": 9,
+      "pricePerVial": 1926878.0,
+      "costPerInjection": 17341902.0,
+      "administrationCostPerVisit": 1957979.0,
+      "annualAdministrationCost": 17621811.0,
+      "annualTotalCost": 34963713.0,
+      "annualFinalCost": 34963713.0
+    }
+  },
+  "references": {
+    "Ranibizumab 0,5 mg PRN": [
+      {
+        "domain": "Eficacia, Seguridad, PROs",
+        "citation": "1. Registro clinical trials-BRIGHTER-NCT01599650"
+      },
+      {
+        "domain": "Supresión VEGF",
+        "citation": "2.Venkatesh, Ramesh et al. “Anti-VEGF safety in evolution: A comprehensive review of ocular and systemic considerations.” Indian journal of ophthalmology vol. 74,5 (2026): 748-759. doi:10.4103/IJO.IJO_3284_25"
+      },
+      {
+        "domain": "Organizativo",
+        "citation": "4.INVIMA 2018M-0007158-R1"
+      }
+    ],
+    "Aflibercept 2 mg  Q8": [
+      {
+        "domain": "Eficacia, Seguridad, PROs",
+        "citation": "1. Registro clinical trials-VIBRANT-NCT0152155"
+      },
+      {
+        "domain": "Supresión VEGF",
+        "citation": "2.Venkatesh, Ramesh et al. “Anti-VEGF safety in evolution: A comprehensive review of ocular and systemic considerations.” Indian journal of ophthalmology vol. 74,5 (2026): 748-759. doi:10.4103/IJO.IJO_3284_25"
+      },
+      {
+        "domain": "Organizativo",
+        "citation": "4.INVIMA 2025MBT-0000160"
+      }
+    ]
+  },
+  "cachedResults": [
+    {
+      "molecule": "Aflibercept 2 mg  Q8",
+      "efficacy": 100.0,
+      "safety": 91.48936170212765,
+      "pros": 54.55,
+      "positioning": 100.0,
+      "totalGlobal": 91.0,
+      "annualCost": 34963713.0,
+      "costPerBenefit": 384216.62637362635
+    },
+    {
+      "molecule": "Ranibizumab 0,5 mg PRN",
+      "efficacy": 100.0,
+      "safety": 90.8936170212766,
+      "pros": 54.55,
+      "positioning": 100.0,
+      "totalGlobal": 90.72,
+      "annualCost": 18057410.0,
+      "costPerBenefit": 199045.52469135803
+    }
+  ]
+}
